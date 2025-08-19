@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Inez — CS Projects</title>
+  <meta name="description" content="Inez's computer science projects." />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1b1b1f;
+      --muted: #6b7280;
+      --link: #0b5fff;
+      --accent: #111827;
+      --maxw: 960px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 6px 0 18px;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,.8);
+      backdrop-filter: saturate(120%) blur(8px);
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #e5e7eb;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+    }
+    .title h1 {
+      font: 700 20px/1.2 Inter;
+      margin: 0;
+    }
+    .title .sub {
+      font: 500 12px/1.3 Inter;
+      color: var(--muted);
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    main { margin-top: 22px; }
+    h2 { font: 700 22px/1.2 Inter; margin: 0 0 18px; }
+
+    /* Project grid */
+    .projects-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 700px) {
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .project-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 20px;
+      background: #fff;
+      transition: all 0.2s ease;
+    }
+    .project-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .project-icon { font-size: 24px; margin-bottom: 6px; }
+
+    .project-title {
+      font: 600 17px/1.3 Inter;
+      margin: 0 0 6px;
+    }
+
+    .project-desc { margin: 0 0 8px; font-size: 15px; }
+    .muted { color: var(--muted); font-size: 14px; }
+
+    footer {
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid #e5e7eb;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <img class="avatar" src="https://placehold.co/112x112/png" alt="Portrait of Inez" />
+      <div class="title">
+        <h1>Inez</h1>
+        <div class="sub">EECS @ UC Berkeley • Embedded Systems • Research & CS</div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="ee-projects.html">EE Projects</a>
+        <a href="cs-projects.html">CS Projects</a>
+        <a href="courses.html">Course</a>
+        <a href="hobbies.html">fun</a>
+        <a href="work.html">Work</a>
+      </nav>
+    </header>
+
+    <main>
+      <h2>CS Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon">🗄️</div>
+          <div class="project-title">ArrayDeque61B</div>
+          <p class="project-desc">
+            A generic double-ended queue (deque) implementation in Java using a circular resizing array. Supports adding/removing from both ends with dynamic growth and shrinkage for efficiency.
+          </p>
+          <div class="muted">Java • Data Structures</div>
+        </div>
+
+        <!-- Add more CS project cards here -->
+      </div>
+    </main>
+
+
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
