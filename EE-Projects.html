@@ -57,18 +57,9 @@
       border: 1px solid #e5e7eb;
     }
 
-    .title {
-      display: flex;
-      flex-direction: column;
-    }
-    .title h1 {
-      font: 700 20px/1.2 Inter;
-      margin: 0;
-    }
-    .title .sub {
-      font: 500 12px/1.3 Inter;
-      color: var(--muted);
-    }
+    .title { display: flex; flex-direction: column; }
+    .title h1 { font: 700 20px/1.2 Inter; margin: 0; }
+    .title .sub { font: 500 12px/1.3 Inter; color: var(--muted); }
 
     nav {
       margin-left: auto;
@@ -76,10 +67,7 @@
       gap: 14px;
       flex-wrap: wrap;
     }
-    nav a {
-      font-weight: 600;
-      color: var(--accent);
-    }
+    nav a { font-weight: 600; color: var(--accent); }
 
     main { margin-top: 22px; }
     h2 { font: 700 22px/1.2 Inter; margin: 0 0 18px; }
@@ -91,15 +79,13 @@
       grid-template-columns: 1fr;
     }
     @media (min-width: 700px) {
-      .projects-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
     }
 
     .project-card {
       border: 1px solid #e5e7eb;
       border-radius: 16px;
-      padding: 20px;
+      padding: 16px;
       background: #fff;
       transition: all 0.2s ease;
     }
@@ -108,21 +94,22 @@
       transform: translateY(-2px);
     }
 
-    .project-icon {
-      font-size: 24px;
-      margin-bottom: 6px;
+    .project-img {
+      width: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
     }
 
     .project-title {
       font: 600 17px/1.3 Inter;
       margin: 0 0 6px;
     }
-
     .project-desc {
       margin: 0 0 8px;
       font-size: 15px;
     }
-
     .muted { color: var(--muted); font-size: 14px; }
 
     footer {
@@ -138,7 +125,7 @@
 <body>
   <div class="wrap">
     <header>
-      <img class="avatar" src="https://placehold.co/112x112/png" alt="Portrait of Inez" />
+      <img class="avatar" src="images/Miata1.png" alt="Portrait of Inez" />
       <div class="title">
         <h1>Inez</h1>
         <div class="sub">EECS @ UC Berkeley • Embedded Systems • Research & Teaching</div>
@@ -146,7 +133,7 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="EE-Projects.html">EE Projects</a>
-        <a href="CS-projects.html">CS Projects</a>
+        <a href="CS-Projects.html">CS Projects</a>
         <a href="Courses.html">Course</a>
         <a href="Hobbies.html">fun</a>
         <a href="Work.html">Work</a>
@@ -158,7 +145,7 @@
       <div class="projects-grid">
 
         <div class="project-card">
-          <div class="project-icon">🚗</div>
+          <img class="project-img" src="images/Miata1.png" alt="Miata Telemetry Retrofit" />
           <div class="project-title">Miata Telemetry Retrofit</div>
           <p class="project-desc">
             CAN-enabled ESP32 dashboard with GPS/RPM/temp readouts; custom harness cut wiring time by ~50%; over-the-air logging.
@@ -167,7 +154,7 @@
         </div>
 
         <div class="project-card">
-          <div class="project-icon">🌱</div>
+          <img class="project-img" src="images/Mosfet1.png" alt="Farm Automation" />
           <div class="project-title">Farm Automation</div>
           <p class="project-desc">
             Timed control + sensor feedback for watering/lighting; MQTT dashboard.
@@ -176,7 +163,7 @@
         </div>
 
         <div class="project-card">
-          <div class="project-icon">🤖</div>
+          <img class="project-img" src="images/RC.png" alt="Dual-BLDC Robot" />
           <div class="project-title">Dual-BLDC Robot</div>
           <p class="project-desc">
             DRV8313 driver + ultrasonic/IR sensing; navigation and control experiments.
@@ -187,8 +174,8 @@
       </div>
     </main>
 
- 
   </div>
+
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

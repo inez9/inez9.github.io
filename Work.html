@@ -17,7 +17,7 @@
       --muted: #6b7280;
       --link: #0b5fff;
       --accent: #111827;
-      --maxw: 860px;
+      --maxw: 900px;
     }
 
     html, body {
@@ -71,52 +71,58 @@
     /* Work grid */
     .work-grid {
       display: grid;
-      gap: 20px;
+      gap: 24px;
       grid-template-columns: 1fr;
     }
-    @media (min-width: 700px) {
+    @media (min-width: 750px) {
       .work-grid { grid-template-columns: 1fr 1fr; }
     }
 
     .work-card {
       border: 1px solid #e5e7eb;
       border-radius: 16px;
-      padding: 20px;
+      overflow: hidden;
       background: #fff;
       transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
     }
     .work-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
       transform: translateY(-2px);
     }
 
-    .work-icon { font-size: 26px; margin-bottom: 8px; }
-    .work-title { font: 600 17px/1.3 Inter; margin: 0 0 6px; }
-    .work-role { font-size: 15px; margin: 0 0 6px; }
-    .muted { font-size: 14px; color: var(--muted); }
-
-    footer {
-      margin-top: 36px;
-      padding-top: 18px;
-      border-top: 1px solid #e5e7eb;
-      color: var(--muted);
-      font-size: 13px;
+    .work-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
     }
+
+    .work-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-title { font: 600 17px/1.3 Inter; margin: 0 0 4px; }
+    .work-role { font-size: 15px; margin: 0 0 10px; color: var(--accent); }
+    .work-desc { flex-grow: 1; font-size: 15px; margin: 0 0 10px; }
+    .muted { font-size: 14px; color: var(--muted); }
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <header>
-      <img class="avatar" src="https://placehold.co/112x112/png" alt="Portrait of Inez" />
+      <img class="avatar" src="images/Miata1.png" alt="Portrait of Inez" />
       <div class="title">
         <h1>Inez</h1>
-        <div class="sub">EECS @ UC Berkeley • Embedded Systems • Research </div>
+        <div class="sub">EECS @ UC Berkeley • Embedded Systems • Research</div>
       </div>
       <nav>
         <a href="index.html">Home</a>
         <a href="EE-Projects.html">EE Projects</a>
-        <a href="CS-projects.html">CS Projects</a>
+        <a href="CS-Projects.html">CS Projects</a>
         <a href="Courses.html">Course</a>
         <a href="Hobbies.html">fun</a>
         <a href="Work.html">Work</a>
@@ -127,42 +133,44 @@
       <h2>Work Experience</h2>
       <div class="work-grid">
 
-
         <div class="work-card">
-          <div class="work-icon">🔧</div>
-          <div class="work-title">SSDI</div>
-          <div class="work-role">Hardware Validation Intern</div>
-          <p>
-            Designed and executed test setups for embedded systems, power electronics, and communication modules. Automated logging with Python for efficiency.
-          </p>
-          <div class="muted">2024 • Hardware Testing • Validation</div>
+          <img class="work-img" src="images/Mosfet2.png" alt="SSDI Hardware Validation" />
+          <div class="work-content">
+            <div class="work-title">SSDI</div>
+            <div class="work-role">Hardware Validation Intern</div>
+            <p class="work-desc">
+              Designed and executed test setups for embedded systems, power electronics, and communication modules. Automated logging with Python for efficiency.
+            </p>
+            <div class="muted">2024 • Hardware Testing • Validation</div>
+          </div>
         </div>
 
         <div class="work-card">
-          <div class="work-icon">🚀</div>
-          <div class="work-title">Berkeley STAR</div>
-          <div class="work-role">Avionics Team Contributor</div>
-          <p>
-            Supported PCB bring-up and avionics test checklists for student rocket launches. Shared best practices with peers during lab sessions.
-          </p>
-          <div class="muted">2023–2024 • Student Rocketry • Avionics</div>
+          <img class="work-img" src="images/Star1.JPG" alt="Berkeley STAR Avionics" />
+          <div class="work-content">
+            <div class="work-title">Berkeley STAR</div>
+            <div class="work-role">Avionics Team Contributor</div>
+            <p class="work-desc">
+              Supported PCB bring-up and avionics test checklists for student rocket launches. Shared best practices with peers during lab sessions.
+            </p>
+            <div class="muted">2023–2024 • Student Rocketry • Avionics</div>
+          </div>
         </div>
 
         <div class="work-card">
-          <div class="work-icon">🧑‍🏫</div>
-          <div class="work-title">Teaching & Mentoring</div>
-          <div class="work-role">Workshop Mentor</div>
-          <p>
-            Led sessions on FreeRTOS basics, serial logging, and embedded debugging. Helped undergrads develop confidence in firmware and hardware bring-up.
-          </p>
-          <div class="muted">2024–2025 • Education • Mentorship</div>
+          <img class="work-img" src="images/CSKickStart.png" alt="Teaching & Mentoring" />
+          <div class="work-content">
+            <div class="work-title">Teaching & Mentoring</div>
+            <div class="work-role">Workshop Mentor</div>
+            <p class="work-desc">
+              Led sessions on FreeRTOS basics, serial logging, and embedded debugging. Helped undergrads develop confidence in firmware and hardware bring-up.
+            </p>
+            <div class="muted">2024–2025 • Education • Mentorship</div>
+          </div>
         </div>
 
       </div>
     </main>
-
   </div>
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
